@@ -293,7 +293,6 @@ vim vim-tutor-extended-part-B.txt
 :set number
 :set relativenumber
 ```
----
 
 # Refrence
 
