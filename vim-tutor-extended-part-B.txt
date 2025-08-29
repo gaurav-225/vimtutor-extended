@@ -1,0 +1,120 @@
+==============================================================================
+                         CHAPTER X – TEXT OBJECT MAGIC
+==============================================================================
+
+Text objects are powerful for editing code.  
+They let you operate "inside" or "around" brackets, quotes, tags, etc.
+
+Format:  OPERATOR + i/a + OBJECT
+   i → inner (without delimiters)
+   a → around (with delimiters)
+
+Objects:  w (word), " (quotes), ' (single quotes), ( [ { < t (HTML tags)
+
+------------------------------------------------------------------------------
+
+TASK 1: Change inside quotes
+--------------------------------
+ci" → change text inside quotes
+ca" → change text inside AND including quotes
+
+Try it here:
+"This is OLD text"
+→ Use ci" to replace only OLD text.
+→ Use ca" to replace OLD text + quotes.
+
+
+TASK 2: Change inside parentheses/brackets/braces
+-------------------------------------------------
+ci( → change inside ( )
+ci[ → change inside [ ]
+ci{ → change inside { }
+
+Try it here:
+function call(OUTDATED);
+Use ci( to replace OUTDATED.
+
+
+TASK 3: Change HTML tags
+-------------------------
+cit → change inside tag
+cat → change tag and its contents
+
+Try it here:
+<div class="container">Replace this</div>
+→ Use cit to change "Replace this"
+→ Use cat to change the whole div.
+
+
+==============================================================================
+                         CHAPTER Y – WEB DEV TRICKS
+==============================================================================
+
+These are super handy when editing HTML, CSS, JS.
+
+1. Delete until character:
+   dt" → delete until next quote
+   df> → delete through next >
+   d/<tag> → delete until matching tag (search + delete)
+
+TASK:
+   var foo = "DELETE_ME";
+   Use dt" to remove until the next quote.
+
+
+2. Indentation:
+   >> → indent line
+   << → un-indent line
+   >ap → indent a paragraph
+   =%  → auto-indent matching brackets
+
+TASK: Select the block below and indent it using >.
+{
+hello_world();
+}
+
+
+3. Surroundings (with plugins like vim-surround):
+   cs"' → change surrounding " to '
+   ds"  → delete surrounding "
+   ysiw" → surround word with "
+
+TASK: (if vim-surround installed)
+Turn this:
+word
+into this:
+"word"
+
+
+4. Search and highlight word under cursor:
+   * → search forward for word under cursor
+   # → search backward
+
+TASK:
+Put cursor on SEARCHME and press *.
+SEARCHME SEARCHME SEARCHME
+
+
+5. Swap and repeat tricks:
+   xp   → swap two characters
+   ddp  → swap two lines
+   .    → repeat last change
+   ; ,  → repeat last f/t in forward/backward direction
+
+TASK:
+Fix this by swapping lines with ddp:
+Line B
+Line A
+
+
+==============================================================================
+                         PRO TIP – WEB FLOW
+==============================================================================
+
+When editing code (HTML, CSS, JS):
+- ci" / ci' → change inside quotes
+- ci{ → change inside CSS blocks
+- ci( → change inside function calls
+- cit → change text inside tags
+- :%s/foo/bar/gc → replace across entire file
+- ggVG= → format/indent entire file

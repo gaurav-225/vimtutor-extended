@@ -1,0 +1,188 @@
+==============================================================================
+                         STRUCTURED VIM TUTOR
+==============================================================================
+
+This tutor is meant for self-practice.  
+Open it in Vim and FOLLOW THE INSTRUCTIONS by typing commands directly.  
+Make changes in this file itself — that’s how you learn.
+
+==============================================================================
+                         CHAPTER 1 – MOVING AROUND
+==============================================================================
+
+1. Use the motion keys:  h  j  k  l
+   - h → left
+   - j → down
+   - k → up
+   - l → right
+
+TASK: Move the cursor to the >>> symbol below using only hjkl.
+
+>>> Practice cursor movement here <<<
+
+
+2. Move by words:
+   - w → next word
+   - e → end of word
+   - b → previous word
+
+TASK: Move to "end" in this line using 'e'.
+
+
+3. Move by line:
+   - 0 → beginning of line
+   - ^ → first non-blank char
+   - $ → end of line
+
+TASK: Move to the $ at the end of this line →   $
+
+
+==============================================================================
+                         CHAPTER 2 – DELETING, YANKING, PASTING
+==============================================================================
+
+The format is:  OPERATOR [COUNT] MOTION
+
+Common operators:
+  d → delete
+  y → yank (copy)
+  c → change
+
+1. Delete word:  dw
+   Delete end of word: de
+   Delete to end of line: d$
+
+TASK: Delete the word WRONG below using 'dw':
+This is a WRONG sentence.
+
+
+2. Yank and paste:
+   - yw → yank word
+   - yy → yank whole line
+   - p  → paste after cursor
+   - P  → paste before cursor
+
+TASK: Yank the word "copyme" and paste it after the word HERE.
+HERE
+
+
+==============================================================================
+                         CHAPTER 3 – CHANGING TEXT
+==============================================================================
+
+Change replaces text until motion, then puts you in Insert mode.
+
+Examples:
+   ce → change to end of word
+   c$ → change to end of line
+   cc → change whole line
+   ci" → change inside quotes
+
+TASK: Use 'ci"' to replace inside the quotes:
+"This is OLD text."
+
+
+==============================================================================
+                         CHAPTER 4 – SEARCHING
+==============================================================================
+
+1. Search forward:   /word
+2. Search backward:  ?word
+3. Repeat:  n (same direction), N (opposite)
+
+TASK: Search for the word PRACTICE in this file.
+
+
+4. Match brackets/parentheses with %.
+
+TASK: Place cursor on this ( and jump to the match ).
+
+
+==============================================================================
+                         CHAPTER 5 – SUBSTITUTION
+==============================================================================
+
+Substitute with :s command.
+
+   :s/old/new/       → first match in line
+   :s/old/new/g      → all matches in line
+   :%s/old/new/g     → all in file
+   :%s/old/new/gc    → confirm each
+
+TASK: Replace WRONG with RIGHT in this line using :s.
+This is WRONG, definitely WRONG.
+
+
+==============================================================================
+                         CHAPTER 6 – VISUAL MODE
+==============================================================================
+
+1. v → start characterwise select
+2. V → start linewise select
+3. Ctrl+v → block select
+
+TASKS:
+- Select this word and yank it: APPLE
+- Select this line and delete it.
+
+
+==============================================================================
+                         CHAPTER 7 – REGISTERS & CLIPBOARD
+==============================================================================
+
+Registers allow you to store text:
+   "ayw → yank word into register a
+   "ap  → paste from register a
+
+System clipboard (if supported):
+   "+yy → yank to system clipboard
+   "+p  → paste from system clipboard
+
+TASK:
+- Yank the word "banana" into register a.
+- Move cursor here → PASTE:
+- Paste the word from register a.
+
+
+==============================================================================
+                         CHAPTER 8 – FILES & SHELL COMMANDS
+==============================================================================
+
+:w newfile     → save file as newfile
+:r filename    → read file into buffer
+:r !ls         → insert shell output
+:!cmd          → run external command
+
+TASK:
+- Save a backup of this file as "practice.txt".
+
+
+==============================================================================
+                         CHAPTER 9 – MULTIPLE WINDOWS
+==============================================================================
+
+Ctrl+w s → split horizontally
+Ctrl+w v → split vertically
+Ctrl+w w → switch windows
+
+TASK:
+- Split this file and open another buffer.
+
+
+==============================================================================
+                         QUICK PRACTICE
+==============================================================================
+
+Try these mini-exercises:
+
+1. Move 8 lines up:       8k
+2. Delete 3 lines down:   d3j
+3. Delete until quotes:   dt"
+4. Swap 2 lines:          ddp
+5. Select all:            ggVG
+
+==============================================================================
+                              THE END
+==============================================================================
+
+Keep practicing until these motions feel natural.
