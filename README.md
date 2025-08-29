@@ -293,7 +293,9 @@ vim vim-tutor-extended-part-B.txt
 :set number
 :set relativenumber
 ```
+---
 
 # Refrence
+
 - [@ThePrimeagen Playlist](https://youtube.com/playlist?list=PLm323Lc7iSW_wuxqmKx_xxNtJC_hJbQ7R&si=1btxj3PdfsfC6u0T)
 - [Quickref.me](https://quickref.me/vim)
